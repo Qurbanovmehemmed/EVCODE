@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: rgb(41, 41, 219);
+}
+.sidebar {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.side {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  align-items: center;
+  color: white;
+}
+ul {
+  display: flex;
+  gap: 20px;
+}
+ul li {
+  list-style: none;
+  font-size: 20px;
+}
+.clicker{
+    display: flex;
+    gap: 20px;
+}
+.burger , .close{
+    cursor: pointer;
+    display: none;
+    color: white;
+    font-size: 20px;
+}
+
+@media (max-width:768px){
+    .side{
+        display: none;
+    }
+    .burger{
+        display: block;
+    }
+    
+    .side.show {
+        display: block; /* When 'show' class is added, sidebar becomes visible */
+    }
+}
+
+
+/* Sidebar and transition styles */
+.side {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: right 0.3s ease-in-out;
+}
+
+.side.show {
+    right: 0;
+}
+
+/* Burger and close buttons */
+.burger, .close {
+    display: block;
+}
+
+.close {
+    display: none;
+    cursor: pointer;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .side {
+        width: 200px;
+    }
+}
+
+
+.clicker ul{
+    padding-right: 50px;
+    
+    display: flex;
+    flex-direction: column;
+}
+.clicker ul li {
+    cursor: pointer;
+    &:hover{
+color: red;
+    }
+}
