@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #todoInput {
+            
+           margin-top: 10px;
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button#clearAllBtn {
+            background-color: #f44336;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button#clearAllBtn:hover {
+            background-color: #d32f2f;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+        li.done {
+            background-color: #e8f5e9;
+            text-decoration: line-through;
+        }
+
+        li.undone {
+            background-color: #ffebee;
+        }
+
+        li .todoText {
+            flex-grow: 1;
+            padding-left: 10px;
+        }
+
+        li button {
+            margin-left: 10px;
+        }
+
+        li button:hover {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TodoList </h1>
+        <input type="text" id="todoInput" placeholder="name">
+        <input type="text" id="todoInput" placeholder="surname">
+        <input type="text" id="todoInput" placeholder="email">
+        <button id="addTodoBtn">Əlavə et</button>
+        <ul id="todoList"></ul>
+        <button id="clearAllBtn">Hamsını Sil</button>
+    </div>
+
+ <script src="script.js"></script>
+</body>
+</html>
