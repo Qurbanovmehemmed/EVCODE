@@ -1,0 +1,105 @@
+/* Ümumi Səhifə Tərtibatı */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Başlıq */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Məhsulun detallarını yerləşdirən konteyner */
+#product-details {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+}
+
+/* Məhsul şəkli */
+#product-details img {
+    width: 200px;
+    max-width: 400px;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+/* Məhsul məlumatları */
+.product-info {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Məhsulun adı */
+.product-info h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Məhsulun təsviri */
+.product-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Məhsul qiyməti */
+.product-info .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Add to Cart düyməsi */
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Əlavə stil - Xırda cihazlar üçün tərtibat */
+@media screen and (max-width: 768px) {
+    #product-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #product-details img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .product-info {
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+}

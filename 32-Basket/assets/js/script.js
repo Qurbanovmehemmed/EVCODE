@@ -495,7 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  updateBasketCount();
+  // updateBasketCount();
   updateUserStatus();
   createUserCard();
 });

@@ -170,6 +170,7 @@ function decrementCount(
   users[userIndex].basket = basket;
   localStorage.setItem("users", JSON.stringify(users));
   updateTotalPrice();
+  
 }
 
 function updateTotalPrice() {
@@ -181,7 +182,4 @@ function updateTotalPrice() {
   total.textContent = `$${totalPrice.toFixed(2)}`;
 }
 
-updateTotalPrice();
-
-
-
+updateTotalPrice()
