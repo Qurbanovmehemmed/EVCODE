@@ -1,0 +1,28 @@
+.menStart {
+    color: white;
+  position: relative;
+  background-image: url(https://preview.colorlib.com/theme/shop/img/men-bg.jpg.webp);
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  opacity: 0.8;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    #f6463d 0%,
+    #f6398d 45%,
+    #f52cdc 100%
+  );
+  z-index: 1; 
+}
+
+.card-area {
+  position: relative;
+  z-index: 2; 
+}

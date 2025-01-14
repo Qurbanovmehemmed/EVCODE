@@ -1,28 +1,30 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/features/productSlice";
+import Hero from "../../components/hero/Hero";
+import Deals from "../../components/deals/Deals";
+import Mens from "../../components/mens/Mens";
+import Women from "../../components/women/Women";
 
 const Home = () => {
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.products);
- 
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
   return (
-    <div>
+    <div>  
+      <Hero />
+      <Deals/>
+      <Mens/>
+      <Women/>
+      <div>
+      
+
   
-      {products && products.length > 0
-        ? products.map((product) => (
-            <div key={product._id}>
-              <p>{product.name}</p>
-              <p>{product.price}</p>
-              <p>{product.category}</p>
-            </div>
-          ))
-        : "not found"}
-    </div>
+  </div></div>
+  
   );
 };
 
