@@ -12,8 +12,7 @@ const Womens = () => {
   }, [dispatch]);
 
   return (
-    <section className="menStart">
-      <div className="overlay"></div>
+    <section className="womenstart">
       <div className="backImg">
 
       </div>
@@ -24,7 +23,7 @@ const Womens = () => {
         <div className="container d-flex flex-wrap justify-content-between">
           {products && products.length > 0
             ? products.map((product) => (
-                <div >
+                <div key={product._id} >
                   <div className="row ">
                    <div>
                    <div >

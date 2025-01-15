@@ -5,6 +5,8 @@ import Hero from "../../components/hero/Hero";
 import Deals from "../../components/deals/Deals";
 import Mens from "../../components/mens/Mens";
 import Women from "../../components/women/Women";
+import FootProducts from "../../components/footProducts/FootProducts";
+import Premium from "../../components/premium/Premium";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -19,6 +21,8 @@ const Home = () => {
       <Deals/>
       <Mens/>
       <Women/>
+      <FootProducts/>
+      <Premium/>
       <div>
       
 
