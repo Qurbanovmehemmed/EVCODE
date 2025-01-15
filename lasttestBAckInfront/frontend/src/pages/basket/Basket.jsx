@@ -23,18 +23,23 @@ const Basket = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Product Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
+            
+            <th>Product image</th>
+            <th>name</th>
+            <th>quantity</th>
+            <th>price</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {products && products.length > 0 ? (
-            products.map((product, index) => (
+            products.map((product) => (
               <tr key={product._id}>
-                <td>{index + 1}</td>
+                
+                <td><img src={product.image} alt=""  style={{
+                  width: "200px",
+                  height:"150px"
+                }} /></td>
                 <td>{product.name}</td>
                 <td>{product.quantity}</td>
                 <td>{product.price}</td>

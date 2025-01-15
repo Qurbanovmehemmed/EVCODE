@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaShoppingBasket } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getProducts } from "../../redux/features/productSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const { products } = useSelector((state) => state.basket);
+  const totalAmount = products.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
   return (
     <div>
       <div className="container">
@@ -66,7 +77,7 @@ const Navbar = () => {
               >
                 <Link to="/basket">
                   <FaShoppingBasket />
-                  <sup>0</sup>
+                  <sup>{totalAmount}</sup>
                 </Link>
               </li>
             </ul>

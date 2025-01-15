@@ -37,7 +37,7 @@ const RowFoot = () => {
         }}
       >
         <img
-          src="https://preview.colorlib.com/theme/shop/img/r1.jpg.webp"
+          src="https://preview.colorlib.com/theme/shop/img/r2.jpg.webp"
           alt=""
         />
         <div
@@ -62,7 +62,7 @@ const RowFoot = () => {
         }}
       >
         <img
-          src="https://preview.colorlib.com/theme/shop/img/r1.jpg.webp"
+          src="https://preview.colorlib.com/theme/shop/img/r3.jpg.webp"
           alt=""
         />
         <div
@@ -87,7 +87,7 @@ const RowFoot = () => {
         }}
       >
         <img
-          src="https://preview.colorlib.com/theme/shop/img/r1.jpg.webp"
+          src="https://preview.colorlib.com/theme/shop/img/r4.jpg.webp"
           alt=""
         />
         <div

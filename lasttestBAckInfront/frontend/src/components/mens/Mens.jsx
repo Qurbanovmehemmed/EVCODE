@@ -4,15 +4,17 @@ import { getProducts } from "../../redux/features/productSlice";
 import Title from "../title/Title";
 import "./Mens.css";
 import { addBasket } from "../../redux/features/basketSlice";
+import { useNavigate } from "react-router-dom";
 
 const Mens = () => {
   const dispatch = useDispatch();
+  const navigate =useNavigate()
   const { products } = useSelector((state) => state.products);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
-
+console.log(products)
   const addToBasket = (e, product) => {
     e.stopPropagation();
     console.log("added to basket");
@@ -44,6 +46,7 @@ const Mens = () => {
                             width: "255px",
                             height: "270px",
                           }}
+                          onClick={()=> navigate(`/productdetail/${product._id}`)}
                         />
                       </div>
                       <div>
