@@ -8,6 +8,7 @@ import Contact from "./pages/contact/Contact";
 import Pages from "./pages/pageL/Pages";
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 import Blog from "./pages/blog/Blog";
+import Wishlist from "./pages/wislist/Wishlist";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +22,7 @@ function App() {
         { path: "/contact", element: <Contact /> },
         { path: "/pages", element: <Pages /> },
         { path: "/blog", element: <Blog /> },
+        { path: "/wishlist", element: <Wishlist /> },
       ],
 
     },
