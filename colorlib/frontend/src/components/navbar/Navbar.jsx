@@ -38,6 +38,9 @@ const Navbar = () => {
               <li>
               <Link to="/wishlist" className="links"><CiHeart/></Link>
               </li>
+              <li>
+              <Link to="/adminPanel" className="links">AdminPanel</Link>
+              </li>
             </ul>
           </div>
        </div>

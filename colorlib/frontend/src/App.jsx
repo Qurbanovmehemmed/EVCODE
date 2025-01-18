@@ -9,6 +9,7 @@ import Pages from "./pages/pageL/Pages";
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 import Blog from "./pages/blog/Blog";
 import Wishlist from "./pages/wislist/Wishlist";
+import AdminPanel from "./pages/adminPanel/AdminPanel";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,13 +24,13 @@ function App() {
         { path: "/pages", element: <Pages /> },
         { path: "/blog", element: <Blog /> },
         { path: "/wishlist", element: <Wishlist /> },
+        { path: "/adminPanel", element: <AdminPanel /> },
       ],
-
     },
     {
       path: "*",
       element: <NotFoundPage />,
-    }
+    },
   ]);
 
   return (

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api/products/";
+const BASE_URL = "http://localhost:5000/api/products";
 
 const initialState = {
   products: [],
@@ -16,13 +16,13 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
+
 export const deletePost = createAsyncThunk(
-  "post/deletePost",
-  async (initialPost) => {
-    const { id } = initialPost;
+  "products/deletePost",
+  async (_id) => {
     try {
-      const response = await axios.delete(`${BASE_URL}/${id}`);
-      if (response?.status === 200) return initialPost;
+      const response = await axios.delete(`${BASE_URL}/${_id}`);
+      if (response?.status === 200) return _id;
       return `${response.status} : ${response.statusText}`;
     } catch (error) {
       return error.message;
@@ -33,7 +33,25 @@ export const deletePost = createAsyncThunk(
 const productSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    sortAzProducts: (state) => {
+      state.products = state.products.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+    },
+    sortZaProducts: (state) => {
+      state.products = state.products.sort((a, b) =>
+        b.name.localeCompare(a.name)
+      );
+    },
+    sortLowToHigh: (state) => {
+      state.products = state.products.sort((a, b) => a.price - b.price);
+    },
+    sortHighToLow: (state) => {
+      state.products = state.products.sort((a, b) => b.price - a.price);
+    },
+  },
+
   extraReducers(builder) {
     builder
 
@@ -43,17 +61,19 @@ const productSlice = createSlice({
       })
 
       .addCase(deletePost.fulfilled, (state, action) => {
-        if (!action?.payload.id) {
+        if (!action?.payload) {
           console.log("could not delete");
           console.log(action.payload);
           return;
         }
 
-        const { id } = action.payload;
-        const Oldproducts = state.products.filter((post) => post.id !== id);
-        state.products = Oldproducts;
+        const _id = action.payload;
+        state.products = state.products.filter((post) => post._id !== _id);
       });
   },
 });
+
+export const { sortAzProducts, sortZaProducts, sortLowToHigh, sortHighToLow } =
+  productSlice.actions;
 
 export default productSlice.reducer;
