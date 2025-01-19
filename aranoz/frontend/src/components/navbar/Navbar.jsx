@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 import { FaCartPlus } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
-import "./Navbar.scss";
 import { useSelector } from "react-redux";
+import "./Navbar.scss";
 
 const Navbar = () => {
   const { basket } = useSelector((state) => state.basket);
   const totalAmount = basket.reduce((sum, product) => sum + product.count, 0);
+  const [isOpen, setIsOpen] = useState(false);
+  const show = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div>
       <nav className="nav">
@@ -53,6 +57,30 @@ const Navbar = () => {
                   <sup>{totalAmount}</sup>
                 </Link>
               </div>
+            </div>
+            <div className="wrapper" onClick={() => show()}>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+            </div>
+            <div className="app">
+              {isOpen && (
+                <div className="menu">
+                  <div className="basketWishlist">
+                    <div>
+                      <Link to="/wishlist">
+                        <CiHeart />
+                      </Link>
+                    </div>
+                    <div>
+                      <Link to="/basket">
+                        <FaCartPlus />
+                        <sup>{totalAmount}</sup>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

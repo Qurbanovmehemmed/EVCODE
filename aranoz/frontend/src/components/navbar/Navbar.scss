@@ -1,21 +1,65 @@
-.nav{
-    background-color: #ecfdff;
-    .navStart{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 25px;
-        font-size: 20px;
-       
-        
-        ul{
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .basketWishlist{
-            display: flex;
-            gap: 30px;
-        }
+.nav {
+  background-color: #ecfdff;
+  .navStart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 25px;
+    font-size: 20px;
+
+    ul {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
+    .basketWishlist {
+      display: flex;
+      gap: 30px;
+    }
+
+    .wrapper {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      .line {
+        width: 18px;
+        background-color: black;
+        height: 2px;
+      }
+    }
+  }
 }
+
+// @media only screen and (max-width: 768px) {
+//   .navStart {
+//     .wrapper {
+//       display: block;
+//       flex-direction: column;
+//       gap: 5px;
+//       cursor: pointer;
+//       .line {
+//         width: 18px;
+//         background-color: black;
+//         height: 2px;
+//       }
+//     }
+
+//     .navMenu {
+//       display: none; /* Default, hidden in mobile */
+//       flex-direction: column;
+//       gap: 15px;
+//       width: 100%;
+//       background-color: #ecfdff;
+//       position: absolute;
+//       top: 80px; /* Adjust based on the header size */
+//       right: 0;
+//       padding: 20px;
+//       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+//     }
+
+//     .navMenu.open {
+//       display: flex; /* Show menu when open */
+//     }
+//   }
+// }

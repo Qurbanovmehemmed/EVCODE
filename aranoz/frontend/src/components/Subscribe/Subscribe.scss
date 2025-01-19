@@ -1,0 +1,38 @@
+.subStart {
+  margin-top: 100px;
+  background-image: url(https://preview.colorlib.com/theme/aranoz/img/subscribe_area.png);
+  // background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+  height:60vh;
+  p {
+    color: red;
+  }
+  h1{
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .inSub{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    input{
+      width: 400px;
+      height: 100%;
+      padding-left: 20px;
+      font-size: 20px;
+    }
+    button{
+      height: 100%;
+    }
+  }
+}

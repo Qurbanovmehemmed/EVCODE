@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { fetchProducts } from "../../redux/features/productSlice";
 import { addBasket } from "../../redux/features/basketSlice";
+import "./Detail.scss";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -20,21 +21,23 @@ const ProductDetail = () => {
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="detail">
             <div>
-              <img src={findProducts?.image} alt="" />
+              <div>
+                <img src={findProducts?.image} alt="" />
+              </div>
             </div>
-          </div>
-          <div className="col-md-6">
-            <p>{findProducts?.name}</p>
-            <p>{findProducts?.price}</p>
-            <p>{findProducts?.category}</p>
-            <button
-              className="btn btn-outline-primary"
-              onClick={() => dispatch(addBasket(findProducts))}
-            >
-              Add to Pidris
-            </button>
+            <div>
+              <p>Title: {findProducts?.name}</p>
+              <p>Price: ${findProducts?.price}</p>
+              <p>Category: {findProducts?.category}</p>
+              <button
+                className="btn btn-outline-primary"
+                onClick={() => dispatch(addBasket(findProducts))}
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
