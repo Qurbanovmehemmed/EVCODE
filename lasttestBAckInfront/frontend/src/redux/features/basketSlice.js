@@ -24,6 +24,7 @@ const basketSlice = createSlice({
         (product) => product._id !== action.payload._id
       );
     },
+    
   },
 });
 

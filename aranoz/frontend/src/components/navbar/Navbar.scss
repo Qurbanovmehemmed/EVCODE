@@ -1,0 +1,21 @@
+.nav{
+    background-color: #ecfdff;
+    .navStart{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 25px;
+        font-size: 20px;
+       
+        
+        ul{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .basketWishlist{
+            display: flex;
+            gap: 30px;
+        }
+    }
+}
